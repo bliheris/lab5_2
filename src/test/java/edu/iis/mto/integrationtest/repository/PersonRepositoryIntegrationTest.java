@@ -46,6 +46,12 @@ public class PersonRepositoryIntegrationTest extends IntegrationTest {
         assertEquals(2, bobs.size());
     }
 
+    @Test
+    public void deleteAllInBatchTest() {
+        personRepository.deleteAllInBatch();
+        assertEquals(0, personRepository.count());
+    }
+
     private Person a(PersonBuilder builder) {
         return builder.build();
     }
