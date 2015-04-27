@@ -1,8 +1,11 @@
 package edu.iis.mto.integrationtest.repository;
 
 
+import edu.iis.mto.integrationtest.model.Person;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PersonRepository {
+import java.util.List;
 
-
+public interface PersonRepository extends JpaRepository<Person, Long> {
+   List<Person> findByFirstNameLike(String firstName);
 }
